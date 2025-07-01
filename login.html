@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Iniciar Sesión / Registrarse</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    body {
+      background-color: #f4f4f4;
+      font-family: Arial, sans-serif;
+    }
+
+    .login-container {
+      max-width: 400px;
+      margin: 80px auto;
+      padding: 30px;
+      background-color: white;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    .login-container h2 {
+      text-align: center;
+      margin-bottom: 25px;
+      color: #2c3e50;
+    }
+
+    .login-container form {
+      display: none;
+    }
+
+    .login-container form.active {
+      display: block;
+    }
+
+    .login-container input {
+      width: 100%;
+      padding: 12px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    .login-container button {
+      width: 100%;
+      padding: 12px;
+      background-color: #2c3e50;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .login-container .toggle-link {
+      text-align: center;
+      margin-top: 15px;
+    }
+
+    .login-container .toggle-link a {
+      color: #2c3e50;
+      cursor: pointer;
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="login-container">
+    <form id="login-form" class="active">
+      <h2>Iniciar Sesión</h2>
+      <input type="email" placeholder="Correo electrónico" required />
+      <input type="password" placeholder="Contraseña" required />
+      <button type="submit">Entrar</button>
+      <div class="toggle-link">
+        ¿No tienes cuenta? <a onclick="mostrarFormulario('registro')">Regístrate</a>
+      </div>
+    </form>
+
+    <form id="registro-form">
+      <h2>Registrarse</h2>
+      <input type="text" placeholder="Nombre completo" required />
+      <input type="email" placeholder="Correo electrónico" required />
+      <input type="password" placeholder="Contraseña" required />
+      <button type="submit">Crear cuenta</button>
+      <div class="toggle-link">
+        ¿Ya tienes cuenta? <a onclick="mostrarFormulario('login')">Iniciar sesión</a>
+      </div>
+    </form>
+  </div>
+
+  <script>
+    function mostrarFormulario(tipo) {
+      const loginForm = document.getElementById('login-form');
+      const registroForm = document.getElementById('registro-form');
+
+      if (tipo === 'registro') {
+        loginForm.classList.remove('active');
+        registroForm.classList.add('active');
+      } else {
+        registroForm.classList.remove('active');
+        loginForm.classList.add('active');
+      }
+    }
+  </script>
+
+</body>
+</html>

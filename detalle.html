@@ -1,0 +1,60 @@
+<!-- detalle.html -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Detalle de Propiedad</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .detalle-contenedor {
+      max-width: 900px;
+      margin: 50px auto;
+      padding: 20px;
+      box-shadow: 0 0 20px rgba(0,0,0,0.1);
+      border-radius: 15px;
+      background-color: #fff;
+    }
+
+    .detalle-contenedor img {
+      width: 100%;
+      border-radius: 10px;
+    }
+
+    .detalle-info {
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <div class="detalle-contenedor">
+    <img id="detalle-imagen" src="" alt="Imagen de la propiedad">
+    <div class="detalle-info">
+      <h2 id="detalle-titulo"></h2>
+      <p id="detalle-ubicacion"></p>
+      <p id="detalle-precio"></p>
+      <p id="detalle-descripcion"></p>
+    </div>
+  </div>
+
+  <script>
+    // Recuperar los datos del localStorage
+    const datos = JSON.parse(localStorage.getItem("propiedadSeleccionada"));
+
+    if (datos) {
+      document.getElementById("detalle-imagen").src = datos.imagen;
+      document.getElementById("detalle-titulo").textContent = datos.nombre;
+      document.getElementById("detalle-ubicacion").textContent = datos.ubicacion;
+      document.getElementById("detalle-precio").textContent = datos.precio;
+      document.getElementById("detalle-descripcion").textContent = datos.descripcion;
+    } else {
+      document.querySelector(".detalle-contenedor").innerHTML = "<p>No se encontró información de la propiedad.</p>";
+    }
+    
+  </script>
+
+  <!-- el <script src="script.js"></script> creo que esta de sobra por que lo borre y no paso nada -->
+<script src="script.js"></script>
+<!-- todo funciono correctamente -->
+</body>
+</html>
+

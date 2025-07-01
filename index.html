@@ -7,13 +7,18 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header>
-    <h1><img src="img/logo.png" style="width: 70px; border-radius: 50px;">Raices Urbanas</h1>
-    <nav>
+  <header class="logo-titulo">
+    <h1><img src="img/logo.png" class="logo">Raices Urbanas</h1>
+
+<div class="menu-toggle" id="menu-toggle">&#9776;</div>
+
+    
+    <nav id="nav">
       <a href="#">Inicio</a>
       <a href="#propiedades">Propiedades</a>
-      <a href="#nosotros">Nosotros</a>
+      <a href="nosotros.html">Nosotros</a>
       <a href="#contacto">Contacto</a>
+      <a href="login.html">Iniciar Sesión</a>
     </nav>
   </header>
 
@@ -23,18 +28,15 @@
   </section>
 
   <section id="propiedades" class="propiedades">
-    <h2>Propiedades Destacadas</h2>
+    <h2 style="text-align: center; margin-bottom: 20px;">Propiedades Destacadas</h2>
+    <div class="tarjetasContainer"></div>
     <div id="lista-propiedades" class="grid-propiedades"></div>
   </section>
 
-  <section id="nosotros" class="nosotros">
-    <h2>Sobre Nosotros</h2>
-    <p>Somos una inmobiliaria dedicada a ayudarte a encontrar el hogar perfecto. Contamos con amplia experiencia en ventas, arriendos y asesorías personalizadas.</p>
-  </section>
 
   <section id="contacto" class="contacto">
-    <h2>Contacto</h2>
-    <form>
+    <h2 style="text-align: center;">Contacto</h2>
+    <form class="formulario-contacto">
       <input type="text" placeholder="Tu nombre" required>
       <input type="email" placeholder="Tu correo" required>
       <textarea placeholder="Tu mensaje" required></textarea>
