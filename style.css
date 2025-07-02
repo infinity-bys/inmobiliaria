@@ -228,7 +228,7 @@ footer {
 
 
 
-/* responsiva */
+/* responsiva propiedades*/
 #lista-propiedades {
   display: grid;
   grid-template-columns: repeat(4, 1fr); /* 4 columnas fijas */
@@ -278,3 +278,4 @@ footer {
     grid-template-columns: 1fr;
   }
 }
+/* final responsiva propiedades */
