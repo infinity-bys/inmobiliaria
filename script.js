@@ -57,6 +57,7 @@ const propiedades = [
   }
 ];
 
+
 // Elementos DOM
 const lista = document.getElementById('lista-propiedades');
 const buscador = document.getElementById('buscador');
