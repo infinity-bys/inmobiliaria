@@ -96,10 +96,14 @@ buscador.addEventListener('input', () => {
   mostrarPropiedades(filtradas);
 });
 
-// Menú hamburguesa
-const toggle = document.getElementById("menu-toggle");
-const nav = document.getElementById("nav");
+// Menú hamburguesa funcionalidad
+document.addEventListener('DOMContentLoaded', function() {
+  const menuToggle = document.getElementById('menu-toggle');
+  const nav = document.getElementById('nav');
 
-toggle.addEventListener("click", () => {
-  nav.classList.toggle("active");
+  menuToggle.addEventListener('click', function() {
+    nav.classList.toggle('active');
+  });
 });
+
+
