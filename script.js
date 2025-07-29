@@ -1,4 +1,5 @@
 const propiedades = [
+  // ... (tu lista de propiedades)
   {
     nombre: "Casa Familiar en el Norte",
     ubicacion: "Bogotá - Norte",
@@ -57,13 +58,13 @@ const propiedades = [
   }
 ];
 
-
-// Elementos DOM
-const lista = document.getElementById('lista-propiedades');
-const buscador = document.getElementById('buscador');
+// DOM
+const lista = document.getElementById("lista-propiedades");
+const buscador = document.getElementById("buscador");
 
 // Mostrar propiedades
 function mostrarPropiedades(listaPropiedades) {
+  if (!lista) return;
   lista.innerHTML = "";
 
   listaPropiedades.forEach((propiedad) => {
@@ -83,27 +84,29 @@ function mostrarPropiedades(listaPropiedades) {
   });
 }
 
-// Mostrar todas inicialmente
-mostrarPropiedades(propiedades);
+// Mostrar todas al inicio (si existe lista)
+if (lista) {
+  mostrarPropiedades(propiedades);
+}
 
 // Filtro buscador
-buscador.addEventListener('input', () => {
-  const texto = buscador.value.toLowerCase();
-  const filtradas = propiedades.filter(p =>
-    p.nombre.toLowerCase().includes(texto) ||
-    p.ubicacion.toLowerCase().includes(texto)
-  );
-  mostrarPropiedades(filtradas);
-});
-
-// Menú hamburguesa funcionalidad
-document.addEventListener('DOMContentLoaded', function() {
-  const menuToggle = document.getElementById('menu-toggle');
-  const nav = document.getElementById('nav');
-
-  menuToggle.addEventListener('click', function() {
-    nav.classList.toggle('active');
+if (buscador) {
+  buscador.addEventListener('input', () => {
+    const texto = buscador.value.toLowerCase();
+    const filtradas = propiedades.filter(p =>
+      p.nombre.toLowerCase().includes(texto) ||
+      p.ubicacion.toLowerCase().includes(texto)
+    );
+    mostrarPropiedades(filtradas);
   });
-});
+}
 
+// Menú hamburguesa (ahora protegido)
+const toggle = document.getElementById("menu-toggle");
+const nav = document.getElementById("nav");
 
+if (toggle && nav) {
+  toggle.addEventListener("click", () => {
+    nav.classList.toggle("active");
+  });
+}

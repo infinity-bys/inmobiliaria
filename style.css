@@ -279,3 +279,100 @@ footer {
   }
 }
 /* final responsiva propiedades */
+
+
+/* css informacion de contacto */
+.contacto {
+  padding: 40px 20px;
+  background-color: #f2f2f2;
+  text-align: center;
+}
+
+.contacto h2 {
+  font-size: 28px;
+  margin-bottom: 30px;
+}
+
+.tarjeta-unica {
+  display: flex;
+  gap: 20px;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 30px;
+  background-color: #fff; /* UNA sola tarjeta blanca */
+  border-radius: 15px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  flex-wrap: wrap;
+}
+
+.info-contacto, .formulario-contacto {
+  flex: 1;
+}
+
+.info-contacto {
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-size: 16px;
+  padding-right: 10px;
+}
+
+.formulario-contacto {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.formulario-contacto input,
+.formulario-contacto textarea {
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 15px;
+}
+
+.formulario-contacto button {
+  padding: 12px;
+  background-color: #1f344e;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.formulario-contacto button:hover {
+  background-color: #15293f;
+}
+
+
+.info-contacto p {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+  font-size: 16px;
+}
+
+.info-contacto i {
+  color: #1f344e;
+  margin-right: 10px;
+  font-size: 18px;
+  width: 20px;
+  text-align: center;
+}
+
+
+/* Opcional: Responsive en pantallas pequeñas */
+@media (max-width: 768px) {
+  .tarjeta-unica {
+    flex-direction: column;
+  }
+
+  .info-contacto, .formulario-contacto {
+    width: 100%;
+  }
+}
+
+/* fin informacion de contacto */
